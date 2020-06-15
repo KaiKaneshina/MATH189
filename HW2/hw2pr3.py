@@ -348,7 +348,7 @@ def grad_descent(X_train, y_train, X_val, y_val, reg=0.0, lr_W=2.5e-12, \
         b_grad = (ones.dot(X_train@W)-ones.dot(y_train) + b*m_train)/m_train
         
         # update b and W based on the gradient
-        # newton's method for fast computation
+        # based on the taylor expansion
         b -= lr_b*b_grad[0,0]
         W -= lr_W*W_grad
 
